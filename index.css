@@ -271,7 +271,7 @@ table {
     padding: 1em;
 }
 
-.dark input[type="checkbox"] {
+input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -357,5 +357,9 @@ input[type="checkbox"]:checked {
 
     .settingstr {
         color: #948fa3;
+    }
+
+    input[type="checkbox"] {
+        background-color: transparent;
     }
 }
