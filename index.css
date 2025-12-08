@@ -121,15 +121,6 @@ input[type="button"].button {
     margin-bottom: 0.4em;
 }
 
-html.dark,
-html.dark body {
-    background: #18171c;
-}
-
-.dark .head_container {
-    background-color: #221f2e;
-}
-
 .head_container {
     padding-top: 0.5rem;
     height: 5em;
@@ -138,24 +129,15 @@ html.dark body {
     width: 100%;
 }
 
-.dark table {
-    color: #fff;
-}
-
 .tr_content {
     z-index: 0;
     position: relative;
 }
 
-.dark .tr_tabs {
+.tr_tabs {
     position: relative;
     z-index: 1;
     height: 2.2em;
-    display: table-row;
-    background-color: #030303;
-}
-
-.dark .tr_tabs {
     background-color: transparent;
 }
 
@@ -207,9 +189,8 @@ html.dark body {
     transition: all 0.2s ease;
 }
 
-.dark .tv_tab:hover {
+.tv_tab:hover {
     background-color: transparent;
-    color: #fff;
     border-color: transparent;
 }
 
@@ -321,6 +302,10 @@ input[type="checkbox"]:checked {
         min-height: 200px;
     }
 
+    table {
+        color: #fff;
+    }
+
     input,
     select,
     textarea {
@@ -330,6 +315,20 @@ input[type="checkbox"]:checked {
 
     :is(input, select, textarea):focus {
         border-color: #c2b8e0;
+    }
+
+    .head_container {
+        background-color: #221f2e;
+    }
+
+    .tr_tabs {
+        background-color: transparent;
+    }
+
+    .tv_tab:hover {
+        background-color: transparent;
+        color: #fff;
+        border-color: transparent;
     }
 
     .tv_tab:before,
