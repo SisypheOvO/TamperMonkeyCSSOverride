@@ -192,8 +192,14 @@ html.dark body {
     border: none;
     padding: 0.4em 1em 1em 1em;
     margin: 0 0 0 0;
-
     border-bottom: 1px solid #8c66ff !important;
+    transition: all 0.2s ease;
+}
+
+.dark .tv_tab:hover {
+    background-color: transparent;
+    color: #fff;
+    border-color: transparent;
 }
 
 .dark [class^="tv_"]:before,
