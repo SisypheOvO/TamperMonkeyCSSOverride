@@ -1,0 +1,258 @@
+@font-face {
+    font-family: "Torus";
+    src: url("https://osu.ppy.sh/assets/fonts/Torus-Regular.734ed3ae.otf")
+        format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+html,
+body,
+.content_wrapper {
+    height: 100%;
+    overflow: hidden;
+    font-size: 100%;
+}
+
+body,
+button,
+input,
+select {
+    font-family: "Torus", Inter, "Helvetica Neue", Tahoma, Arial, "Hiragino Sans GB",
+        "Microsoft YaHei", "Apple SD Gothic Neo", system-ui, sans-serif;
+}
+
+.dark textarea {
+    font-family: inherit;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #8561f2 transparent;
+    max-width: 100%;
+}
+
+.dark input,
+select,
+textarea {
+    align-self: stretch;
+    background: none;
+    background-color: #3d3946;
+    filter: invert(0%) !important;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    flex: 1;
+    font-weight: 400;
+    max-width: 250px;
+    outline: none;
+    padding: 5px;
+}
+
+.dark :is(input, select, textarea):focus {
+    border-color: #c2b8e0;
+}
+
+.dark input[type="button"],
+button {
+    background-color: #5639ac;
+    min-width: 128px;
+    overflow: hidden;
+    padding: 7px 10px;
+    position: relative;
+    text-align: left;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+    outline: none;
+    text-transform: none;
+    transition: background-color 0.12s;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.dark button {
+    margin-right: 0.4em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    filter: invert(0%) !important;
+    color: #fff;
+}
+
+.dark button:disabled {
+    background-color: #534972;
+}
+
+.dark input[type="button"]:hover {
+    background-color: hsl(255, 100%, 70%);
+    color: hsl(255, 40%, 100%);
+}
+
+.dark input[type="button"].button {
+    height: fit-content;
+    margin-bottom: 0.4em;
+}
+
+html.dark,
+html.dark body {
+    background: #18171c;
+}
+
+.dark .head_container {
+    background-color: #221f2e;
+}
+
+.head_container {
+    padding-top: 0.5rem;
+    height: 5em;
+    font-size: 85%;
+    position: fixed;
+    width: 100%;
+}
+
+.dark table {
+    color: #fff;
+}
+
+.tr_tabs {
+    z-index: 0;
+    height: 2.2em;
+    display: table-row;
+    background-color: #030303;
+}
+
+.dark .tr_tabs {
+    background-color: transparent;
+}
+
+.tv_tabs_fill {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: visible;
+}
+
+.tv_tabs_table {
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-height: 2.7em;
+    height: 2.7em;
+    max-width: 100%;
+    overflow: visible;
+}
+
+.tv_tabs_align {
+    display: flex;
+    white-space: nowrap;
+    padding-left: 1px;
+    position: relative;
+    max-height: 2.6em;
+    margin: 0 20px 2px 20px;
+
+    color: #b3a6d9;
+    background-color: #2e293d;
+    z-index: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: 1px solid #363636;
+}
+
+.tv_container_fit {
+    top: 2em;
+}
+.dark .tv_tab {
+    color: #b3a6d9;
+    background-color: transparent;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: none;
+    padding: 0.4em 1em 1em 1em;
+    margin: 0 0 0 0;
+
+    border-bottom: 1px solid #8c66ff !important;
+}
+
+.dark [class^="tv_"]:before,
+.dark [class^="tv_"]:after {
+    display: none;
+}
+
+.dark .tv_selected {
+    background-color: transparent !important;
+    color: #ffffff;
+}
+
+.dark .tv_selected::before {
+    background-color: #8561f2;
+    bottom: -4px;
+    left: 50%;
+    content: "";
+    display: block;
+    height: 5px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    border-radius: 10000px;
+    transition: inherit;
+    transform: translateX(-50%) scaleY(1);
+}
+
+.tv_tab .far {
+    margin-top: 0.1em;
+}
+
+.section_head {
+    background-color: #24222a;
+    padding: 20px 20px 20px 50px;
+    color: #fff;
+}
+
+.section_content {
+    background-color: #302e38;
+    padding-left: 160px;
+}
+
+.settingsta[name="用户 CSS"] {
+    min-height: 800px;
+    min-width: 700px;
+    padding: 1em;
+}
+
+.settingstr {
+    color: #948fa3;
+}
+
+.dark input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background-color: transparent;
+    border: 2px solid #5e4a9c;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.dark input[type="checkbox"]:checked {
+    background-color: transparent;
+    border-color: #8c66ff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238c66ff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px;
+}
