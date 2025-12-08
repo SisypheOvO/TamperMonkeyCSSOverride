@@ -271,10 +271,24 @@ html.dark body {
 }
 
 .section_content {
-    display: block;
     background-color: #302e38;
     padding: 20px 80px 20px 160px;
     width: 100%;
+}
+
+table.section_content {
+    display: block;
+}
+
+div.section_content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 6px;
 }
 
 .settingsta[name="用户 CSS"] {
