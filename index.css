@@ -29,7 +29,7 @@ select {
         "Microsoft YaHei", "Apple SD Gothic Neo", system-ui, sans-serif;
 }
 
-.dark textarea {
+textarea {
     font-family: inherit;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -39,21 +39,19 @@ select {
     min-height: 200px;
 }
 
-.dark .named > div > textarea {
+.named > div > textarea {
     min-height: 350px;
     min-width: 500px;
 }
 
-.dark input,
+input,
 select,
 textarea {
     align-self: stretch;
     background: none;
-    background-color: #3d3946;
     filter: invert(0%) !important;
     border: 2px solid transparent;
     border-radius: 4px;
-    color: #fff;
     flex: 1;
     font-weight: 400;
     max-width: 250px;
@@ -73,13 +71,9 @@ select[multiple]:focus {
     border-color: #c2b8e0;
 }
 
-.dark input {
+input {
     margin: 0;
     margin-right: 0.4rem;
-}
-
-.dark :is(input, select, textarea):focus {
-    border-color: #c2b8e0;
 }
 
 .dark input[type="button"],
@@ -122,7 +116,7 @@ button {
     color: hsl(255, 40%, 100%);
 }
 
-.dark input[type="button"].button {
+input[type="button"].button {
     height: fit-content;
     margin-bottom: 0.4em;
 }
@@ -148,7 +142,7 @@ html.dark body {
     color: #fff;
 }
 
-.dark .tr_content {
+.tr_content {
     z-index: 0;
     position: relative;
 }
@@ -219,17 +213,16 @@ html.dark body {
     border-color: transparent;
 }
 
-.dark [class^="tv_"]:before,
-.dark [class^="tv_"]:after {
+.tv_tab:before,
+.tv_tab:after {
     display: none;
 }
 
-.dark .tv_selected {
+.tv_selected {
     background-color: transparent !important;
-    color: #ffffff;
 }
 
-.dark .tv_selected::before {
+.tv_tabs_align .tv_tab.tv_selected::before {
     background-color: #8561f2;
     bottom: -3px;
     left: 50%;
@@ -241,6 +234,8 @@ html.dark body {
     border-radius: 10000px;
     transition: inherit;
     transform: translateX(-50%) scaleY(1);
+    border: none;
+    box-shadow: none;
 }
 
 .tv_tab .far {
@@ -263,16 +258,13 @@ html.dark body {
 }
 
 .section_head {
-    background-color: #24222a;
     width: 250px;
     min-width: 250px;
     max-width: 250px;
     padding: 20px 80px 20px 50px;
-    color: #fff;
 }
 
 .section_content {
-    background-color: #302e38;
     padding: 20px 80px 20px 160px;
     width: 100%;
 }
@@ -298,10 +290,6 @@ table {
     padding: 1em;
 }
 
-.settingstr {
-    color: #948fa3;
-}
-
 .dark input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -316,11 +304,59 @@ table {
     position: relative;
 }
 
-.dark input[type="checkbox"]:checked {
+input[type="checkbox"]:checked {
     background-color: transparent;
     border-color: #8c66ff;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238c66ff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 14px;
+}
+
+.dark {
+    textarea {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        max-width: 100%;
+        min-height: 200px;
+    }
+
+    input,
+    select,
+    textarea {
+        background-color: #3d3946;
+        color: #fff;
+    }
+
+    :is(input, select, textarea):focus {
+        border-color: #c2b8e0;
+    }
+
+    .tv_tab:before,
+    .tv_tab:after {
+        display: none;
+    }
+
+    .tv_selected {
+        background-color: transparent !important;
+        color: #ffffff;
+    }
+
+    .tv_selected:before {
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    .section_head {
+        background-color: #24222a;
+        color: #fff;
+    }
+
+    .section_content {
+        background-color: #302e38;
+    }
+
+    .settingstr {
+        color: #948fa3;
+    }
 }
