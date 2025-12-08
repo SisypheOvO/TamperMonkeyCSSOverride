@@ -55,6 +55,13 @@ textarea {
     padding: 5px;
 }
 
+input[type="text"]:not(.CodeMirror input),
+textarea,
+select[multiple] {
+    background-color: #3d3946;
+    border: 2px solid transparent;
+}
+
 .dark :is(input, select, textarea):focus {
     border-color: #c2b8e0;
 }
@@ -124,8 +131,14 @@ html.dark body {
     color: #fff;
 }
 
-.tr_tabs {
+.dark .tr_content {
     z-index: 0;
+    position: relative;
+}
+
+.dark .tr_tabs {
+    position: relative;
+    z-index: 1;
     height: 2.2em;
     display: table-row;
     background-color: #030303;
@@ -143,12 +156,11 @@ html.dark body {
 }
 
 .tv_tabs_table {
-    z-index: 0;
     position: absolute;
     bottom: 0;
     right: 0;
-    max-height: 2.7em;
-    height: 2.7em;
+    max-height: 2.6em;
+    height: 2.6em;
     max-width: 100%;
     overflow: visible;
 }
@@ -163,7 +175,6 @@ html.dark body {
 
     color: #b3a6d9;
     background-color: #2e293d;
-    z-index: 0;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     border: 1px solid #363636;
@@ -172,6 +183,7 @@ html.dark body {
 .tv_container_fit {
     top: 2em;
 }
+
 .dark .tv_tab {
     color: #b3a6d9;
     background-color: transparent;
@@ -196,14 +208,13 @@ html.dark body {
 
 .dark .tv_selected::before {
     background-color: #8561f2;
-    bottom: -4px;
+    bottom: -3px;
     left: 50%;
     content: "";
     display: block;
     height: 5px;
     position: absolute;
     width: 100%;
-    z-index: 10;
     border-radius: 10000px;
     transition: inherit;
     transform: translateX(-50%) scaleY(1);
