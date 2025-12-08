@@ -68,6 +68,16 @@ select[multiple] {
     border: 2px solid transparent;
 }
 
+input[type="text"]:not(.CodeMirror input):focus,
+select[multiple]:focus {
+    border-color: #c2b8e0;
+}
+
+.dark input {
+    margin: 0;
+    margin-right: 0.4rem;
+}
+
 .dark :is(input, select, textarea):focus {
     border-color: #c2b8e0;
 }
@@ -87,6 +97,7 @@ button {
     font-size: 12px;
     font-weight: 600;
     margin: 0;
+    margin-right: 0.4em;
     outline: none;
     text-transform: none;
     transition: background-color 0.12s;
@@ -95,7 +106,6 @@ button {
 }
 
 .dark button {
-    margin-right: 0.4em;
     margin-top: 1rem;
     margin-bottom: 1rem;
     filter: invert(0%) !important;
