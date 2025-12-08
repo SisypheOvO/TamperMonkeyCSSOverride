@@ -36,6 +36,12 @@ select {
     scrollbar-width: thin;
     scrollbar-color: #8561f2 transparent;
     max-width: 100%;
+    min-height: 200px;
+}
+
+.dark .named>div>textarea {
+    min-height: 350px;
+    min-width: 500px;
 }
 
 .dark input,
