@@ -86,6 +86,7 @@ select[multiple]:focus {
 button {
     background-color: #5639ac;
     min-width: 128px;
+    width: fit-content;
     overflow: hidden;
     padding: 7px 10px;
     position: relative;
