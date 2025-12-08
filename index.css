@@ -39,7 +39,7 @@ select {
     min-height: 200px;
 }
 
-.dark .named>div>textarea {
+.dark .named > div > textarea {
     min-height: 350px;
     min-width: 500px;
 }
@@ -236,15 +236,35 @@ html.dark body {
     margin-top: 0.1em;
 }
 
+.desktop .tv_content {
+    width: 100%;
+}
+
+.tr_content,
+.td_content,
+.section {
+    width: 100%;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+}
+
 .section_head {
     background-color: #24222a;
-    padding: 20px 20px 20px 50px;
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
+    padding: 20px 80px 20px 50px;
     color: #fff;
 }
 
 .section_content {
+    display: block;
     background-color: #302e38;
-    padding-left: 160px;
+    padding: 20px 80px 20px 160px;
+    width: 100%;
 }
 
 .settingsta[name="用户 CSS"] {
