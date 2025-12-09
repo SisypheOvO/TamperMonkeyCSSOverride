@@ -1,14 +1,17 @@
 {
     "cSpell.words": [
         "actiontable",
+        "activeline",
         "Cpolyline",
         "Csvg",
         "editormenubar",
+        "foldgutter",
         "multiselectreplaced",
         "multiselectrow",
         "scripttable",
         "scripttr",
         "settingsta",
-        "settingstr"
+        "settingstr",
+        "trailingspace"
     ]
 }

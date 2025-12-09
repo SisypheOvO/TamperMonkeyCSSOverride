@@ -304,6 +304,412 @@ input[type="checkbox"]:checked {
     border-top: 0;
 }
 
+/* 编辑器整体样式 */
+.CodeMirror {
+    font-family: Consolas, "SF Mono", Monaco, "Ubuntu Mono", "DejaVu Sans Mono",
+        "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.CodeMirror:hover {
+    border-color: #c0c0c0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.CodeMirror-focused {
+    border-color: #4d90fe;
+    box-shadow: 0 0 0 3px rgba(77, 144, 254, 0.1);
+}
+
+/* 滚动条优化 */
+.CodeMirror-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #c0c0c0 #f0f0f0;
+}
+
+.CodeMirror-scroll::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.CodeMirror-scroll::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+.CodeMirror-scroll::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 5px;
+    border: 2px solid #f0f0f0;
+}
+
+.CodeMirror-scroll::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+/* 行号区域优化 */
+.CodeMirror-gutters {
+    background-color: #f5f5f7;
+    border-right: 1px solid #e8e8e8;
+    padding-right: 8px;
+}
+
+.CodeMirror-linenumber {
+    color: #888;
+    font-size: 12px;
+    padding: 0 8px 0 4px;
+    min-width: 30px;
+    text-align: right;
+    font-weight: 500;
+}
+
+.CodeMirror-activeline .CodeMirror-linenumber {
+    color: #333;
+    background-color: #e8f0fe;
+    font-weight: 600;
+}
+
+/* 光标和选中文本 */
+.CodeMirror-cursor {
+    border-left: 2px solid #4d90fe;
+    border-right: none;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.CodeMirror-selected {
+    background-color: rgba(77, 144, 254, 0.2);
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+    background-color: rgba(77, 144, 254, 0.25);
+}
+
+/* 活动行高亮 */
+.CodeMirror-activeline-background {
+    background: linear-gradient(
+        90deg,
+        rgba(77, 144, 254, 0.05) 0%,
+        rgba(77, 144, 254, 0.02) 100%
+    );
+}
+
+/* 行内样式优化 */
+.CodeMirror-line {
+    padding: 2px 8px;
+}
+
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+    padding: 2px 12px;
+}
+
+/* 折叠标记 */
+.CodeMirror-foldgutter-open:after {
+    content: "▼";
+    color: #888;
+    font-size: 10px;
+    transition: transform 0.2s;
+}
+
+.CodeMirror-foldgutter-open:hover:after {
+    color: #4d90fe;
+    transform: scale(1.2);
+}
+
+.CodeMirror-foldgutter-folded:after {
+    content: "▶";
+    color: #666;
+    font-size: 10px;
+}
+
+.CodeMirror-foldgutter-folded:hover:after {
+    color: #4d90fe;
+}
+
+/* 搜索匹配 */
+.CodeMirror-search-match {
+    background-color: rgba(255, 215, 0, 0.3);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 2px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        background-color: rgba(255, 215, 0, 0.5);
+    }
+    100% {
+        background-color: rgba(255, 215, 0, 0.3);
+    }
+}
+
+/* 自动补全提示 */
+.CodeMirror-hints {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    font-family: Consolas, "SF Mono", Monaco, monospace;
+    font-size: 13px;
+}
+
+.CodeMirror-hint {
+    padding: 6px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.2s;
+}
+
+.CodeMirror-hint:hover {
+    background-color: #f5f7fa;
+}
+
+li.CodeMirror-hint-active {
+    background-color: #4d90fe;
+    color: white;
+    border-radius: 4px;
+}
+
+/* 错误提示 */
+.CodeMirror-lint-tooltip {
+    background: white;
+    border: 1px solid #ff6b6b;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
+    color: #d32f2f;
+    font-size: 12px;
+    font-family: Consolas, "SF Mono", Monaco, monospace;
+}
+
+.CodeMirror-lint-marker-error {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23ff6b6b"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="12">!</text></svg>');
+}
+
+.CodeMirror-lint-marker-warning {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23ffa726"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="12">!</text></svg>');
+}
+
+/* 代码语法高亮增强 */
+.cm-s-default .cm-keyword {
+    color: #d73a49;
+    font-weight: bold;
+}
+.cm-s-default .cm-def {
+    color: #6f42c1;
+    font-weight: bold;
+}
+.cm-s-default .cm-variable {
+    color: #24292e;
+}
+.cm-s-default .cm-variable-2 {
+    color: #005cc5;
+}
+.cm-s-default .cm-string {
+    color: #032f62;
+}
+.cm-s-default .cm-number {
+    color: #e36209;
+}
+.cm-s-default .cm-comment {
+    color: #6a737d;
+    font-style: italic;
+}
+.cm-s-default .cm-meta {
+    color: #6f42c1;
+}
+.cm-s-default .cm-builtin {
+    color: #005cc5;
+}
+.cm-s-default .cm-tag {
+    color: #22863a;
+}
+.cm-s-default .cm-attribute {
+    color: #6f42c1;
+}
+.cm-s-default .cm-operator {
+    color: #d73a49;
+}
+
+/* 匹配括号高亮 */
+.CodeMirror-matchingbracket {
+    background-color: rgba(38, 139, 210, 0.2);
+    border-bottom: 2px solid #268bd2;
+    color: #333 !important;
+    font-weight: bold;
+}
+
+.CodeMirror-nonmatchingbracket {
+    background-color: rgba(220, 50, 47, 0.2);
+    border-bottom: 2px solid #dc322f;
+}
+
+/* 行尾空格高亮 */
+.cm-trailingspace {
+    background-color: rgba(249, 38, 114, 0.15);
+    border-bottom: 1px dotted #f92672;
+}
+
+/* 对话框样式 */
+.CodeMirror-dialog {
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.CodeMirror-dialog input {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 6px 12px;
+    background: #fafafa;
+    font-size: 13px;
+    transition: all 0.2s;
+    font-family: Consolas, "SF Mono", Monaco, monospace;
+}
+
+.CodeMirror-dialog input:focus {
+    outline: none;
+    border-color: #4d90fe;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(77, 144, 254, 0.1);
+}
+
+.CodeMirror-dialog button {
+    background: #4d90fe;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.CodeMirror-dialog button:hover {
+    background: #3b7de0;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 书签标记 */
+.CodeMirror-bookmarks-marked {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 224, 85, 0.15) 0%,
+        rgba(255, 224, 85, 0.05) 100%
+    );
+    border-left: 3px solid #ffd700;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .CodeMirror {
+        font-size: 13px;
+        border-radius: 6px;
+    }
+
+    .CodeMirror-linenumber {
+        font-size: 11px;
+        min-width: 24px;
+    }
+
+    .CodeMirror-gutters {
+        padding-right: 4px;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    .CodeMirror {
+        background-color: #1e1e1e;
+        border-color: #3e3e42;
+        color: #d4d4d4;
+    }
+
+    .CodeMirror-gutters {
+        background-color: #252526;
+        border-right-color: #3e3e42;
+    }
+
+    .CodeMirror-linenumber {
+        color: #858585;
+    }
+
+    .CodeMirror-activeline .CodeMirror-linenumber {
+        color: #d4d4d4;
+        background-color: #2a2d2e;
+    }
+
+    .CodeMirror-activeline-background {
+        background: linear-gradient(
+            90deg,
+            rgba(0, 122, 204, 0.1) 0%,
+            rgba(0, 122, 204, 0.05) 100%
+        );
+    }
+
+    .CodeMirror-cursor {
+        border-left-color: #569cd6;
+    }
+
+    .CodeMirror-selected {
+        background-color: rgba(86, 156, 214, 0.2);
+    }
+
+    /* 深色模式下的语法高亮 */
+    .cm-s-default .cm-keyword {
+        color: #569cd6;
+    }
+    .cm-s-default .cm-def {
+        color: #9cdcfe;
+    }
+    .cm-s-default .cm-variable {
+        color: #9cdcfe;
+    }
+    .cm-s-default .cm-string {
+        color: #ce9178;
+    }
+    .cm-s-default .cm-comment {
+        color: #6a9955;
+    }
+    .cm-s-default .cm-number {
+        color: #b5cea8;
+    }
+}
+
+/* 打印优化 */
+@media print {
+    .CodeMirror {
+        background: white !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+    }
+
+    .CodeMirror-gutters {
+        border-right: 1px solid #ccc !important;
+        background: #f0f0f0 !important;
+    }
+}
+
 .tv_table_alt .tv_tabs_fill_alt {
     height: 2.6em;
 }
@@ -345,7 +751,8 @@ a + a {
     margin-left: 0.5em;
 }
 
-.scripttable tbody .far, .scripttable tbody a {
+.scripttable tbody .far,
+.scripttable tbody a {
     width: 20px;
     height: 20px;
 }
