@@ -345,6 +345,11 @@ a + a {
     margin-left: 0.5em;
 }
 
+.scripttable tbody .far, .scripttable tbody a {
+    width: 20px;
+    height: 20px;
+}
+
 .scripttable.multiselect th.small {
     padding: 6px 15px;
 }
