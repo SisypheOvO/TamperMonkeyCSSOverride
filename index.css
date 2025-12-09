@@ -294,6 +294,79 @@ input[type="checkbox"]:checked {
     background-size: 14px;
 }
 
+.editor_container_o .editormenubar td {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.editor_container_o {
+    border-top: 0;
+}
+
+.tv_table_alt .tv_tabs_fill_alt {
+    height: 2.6em;
+}
+
+tr.script_tab_head {
+    height: auto !important;
+}
+
+tr.script_tab_head > td {
+    display: block;
+    height: 63px;
+}
+
+tr.script_tab_head > td > div {
+    height: 100%;
+}
+
+.scripttable {
+    margin-bottom: 0;
+    border-spacing: 0;
+}
+
+.scripttable tbody .script_sel {
+    height: 34px;
+    width: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.scripttable tbody .script_sel input {
+    margin-right: 0;
+}
+
+.scripttable tbody .far + .far,
+a + a {
+    margin-left: 0.5em;
+}
+
+.scripttable.multiselect th.small {
+    padding: 6px 15px;
+}
+
+.multiselect .multiselectreplaced {
+    border-width: 0;
+}
+
+.scripttable tbody td:has(.far + .far),
+.scripttable tbody td:has(a + a) {
+    padding: 6px 20px;
+}
+
+.scripttable tbody tr.scripttr td:last-child {
+    padding: 6px 40px;
+}
+
+html.dark,
+html.dark body {
+    background: #22282a;
+}
+
 .dark {
     textarea {
         margin-top: 1rem;
@@ -346,6 +419,10 @@ input[type="checkbox"]:checked {
         border: none !important;
     }
 
+    .tv_content {
+        background-color: #22282a;
+    }
+
     .section_head {
         background-color: #24222a;
         color: #fff;
@@ -361,5 +438,19 @@ input[type="checkbox"]:checked {
 
     input[type="checkbox"] {
         background-color: transparent;
+    }
+
+    .scripttable tr,
+    .section,
+    .actiontable {
+        background-color: #2e3538;
+    }
+
+    .scripttable tr {
+        border-color: #22282a;
+    }
+
+    table.scripttable.multiselect {
+        background-color: #22282a;
     }
 }
