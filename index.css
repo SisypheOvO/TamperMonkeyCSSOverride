@@ -312,14 +312,11 @@ input[type="checkbox"]:checked {
     line-height: 1.6;
     background-color: #fafafa;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .CodeMirror:hover {
     border-color: #c0c0c0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .CodeMirror-focused {
@@ -327,7 +324,7 @@ input[type="checkbox"]:checked {
     box-shadow: 0 0 0 3px rgba(77, 144, 254, 0.1);
 }
 
-/* 滚动条优化 */
+/* 滚动条美化 */
 .CodeMirror-scroll {
     scrollbar-width: thin;
     scrollbar-color: #c0c0c0 #f0f0f0;
@@ -365,7 +362,6 @@ input[type="checkbox"]:checked {
     font-size: 12px;
     padding: 0 8px 0 4px;
     min-width: 30px;
-    text-align: right;
     font-weight: 500;
 }
 
@@ -375,10 +371,9 @@ input[type="checkbox"]:checked {
     font-weight: 600;
 }
 
-/* 光标和选中文本 */
+/* 光标美化 */
 .CodeMirror-cursor {
-    border-left: 2px solid #4d90fe;
-    border-right: none;
+        border-left: 2px solid #4d90fe;
     animation: blink 1s infinite;
 }
 
@@ -392,6 +387,7 @@ input[type="checkbox"]:checked {
     }
 }
 
+/* 选中文本增强 */
 .CodeMirror-selected {
     background-color: rgba(77, 144, 254, 0.2);
 }
@@ -409,27 +405,23 @@ input[type="checkbox"]:checked {
     );
 }
 
-/* 行内样式优化 */
-.CodeMirror-line {
-    padding: 2px 8px;
-}
-
+/* 行内间距优化 */
 .CodeMirror pre.CodeMirror-line,
 .CodeMirror pre.CodeMirror-line-like {
     padding: 2px 12px;
 }
 
-/* 折叠标记 */
+/* 折叠标记美化 */
 .CodeMirror-foldgutter-open:after {
     content: "▼";
     color: #888;
     font-size: 10px;
-    transition: transform 0.2s;
+    transition: all 0.2s;
 }
 
 .CodeMirror-foldgutter-open:hover:after {
     color: #4d90fe;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .CodeMirror-foldgutter-folded:after {
@@ -442,29 +434,8 @@ input[type="checkbox"]:checked {
     color: #4d90fe;
 }
 
-/* 搜索匹配 */
-.CodeMirror-search-match {
-    background-color: rgba(255, 215, 0, 0.3);
-    border: 1px solid rgba(255, 215, 0, 0.5);
-    border-radius: 2px;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        background-color: rgba(255, 215, 0, 0.3);
-    }
-    50% {
-        background-color: rgba(255, 215, 0, 0.5);
-    }
-    100% {
-        background-color: rgba(255, 215, 0, 0.3);
-    }
-}
-
-/* 自动补全提示 */
+/* 自动补全提示美化 */
 .CodeMirror-hints {
-    background: white;
     border: 1px solid #e0e0e0;
     border-radius: 6px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -475,7 +446,7 @@ input[type="checkbox"]:checked {
 .CodeMirror-hint {
     padding: 6px 12px;
     border-bottom: 1px solid #f0f0f0;
-    transition: all 0.2s;
+    transition: background-color 0.2s;
 }
 
 .CodeMirror-hint:hover {
@@ -488,72 +459,10 @@ li.CodeMirror-hint-active {
     border-radius: 4px;
 }
 
-/* 错误提示 */
-.CodeMirror-lint-tooltip {
-    background: white;
-    border: 1px solid #ff6b6b;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
-    color: #d32f2f;
-    font-size: 12px;
-    font-family: Consolas, "SF Mono", Monaco, monospace;
-}
-
-.CodeMirror-lint-marker-error {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23ff6b6b"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="12">!</text></svg>');
-}
-
-.CodeMirror-lint-marker-warning {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23ffa726"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="12">!</text></svg>');
-}
-
-/* 代码语法高亮增强 */
-.cm-s-default .cm-keyword {
-    color: #d73a49;
-    font-weight: bold;
-}
-.cm-s-default .cm-def {
-    color: #6f42c1;
-    font-weight: bold;
-}
-.cm-s-default .cm-variable {
-    color: #24292e;
-}
-.cm-s-default .cm-variable-2 {
-    color: #005cc5;
-}
-.cm-s-default .cm-string {
-    color: #032f62;
-}
-.cm-s-default .cm-number {
-    color: #e36209;
-}
-.cm-s-default .cm-comment {
-    color: #6a737d;
-    font-style: italic;
-}
-.cm-s-default .cm-meta {
-    color: #6f42c1;
-}
-.cm-s-default .cm-builtin {
-    color: #005cc5;
-}
-.cm-s-default .cm-tag {
-    color: #22863a;
-}
-.cm-s-default .cm-attribute {
-    color: #6f42c1;
-}
-.cm-s-default .cm-operator {
-    color: #d73a49;
-}
-
-/* 匹配括号高亮 */
+/* 匹配括号优化 */
 .CodeMirror-matchingbracket {
     background-color: rgba(38, 139, 210, 0.2);
     border-bottom: 2px solid #268bd2;
-    color: #333 !important;
-    font-weight: bold;
 }
 
 .CodeMirror-nonmatchingbracket {
@@ -561,18 +470,11 @@ li.CodeMirror-hint-active {
     border-bottom: 2px solid #dc322f;
 }
 
-/* 行尾空格高亮 */
-.cm-trailingspace {
-    background-color: rgba(249, 38, 114, 0.15);
-    border-bottom: 1px dotted #f92672;
-}
-
-/* 对话框样式 */
+/* 对话框优化 */
 .CodeMirror-dialog {
     background: white;
     border-bottom: 1px solid #e0e0e0;
     padding: 8px 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .CodeMirror-dialog input {
@@ -580,7 +482,6 @@ li.CodeMirror-hint-active {
     border-radius: 4px;
     padding: 6px 12px;
     background: #fafafa;
-    font-size: 13px;
     transition: all 0.2s;
     font-family: Consolas, "SF Mono", Monaco, monospace;
 }
@@ -598,51 +499,32 @@ li.CodeMirror-hint-active {
     border: none;
     border-radius: 4px;
     padding: 6px 16px;
-    font-size: 12px;
     font-weight: 500;
-    cursor: pointer;
     transition: all 0.2s;
 }
 
 .CodeMirror-dialog button:hover {
     background: #3b7de0;
     transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* 书签标记 */
-.CodeMirror-bookmarks-marked {
-    background: linear-gradient(
-        90deg,
-        rgba(255, 224, 85, 0.15) 0%,
-        rgba(255, 224, 85, 0.05) 100%
-    );
-    border-left: 3px solid #ffd700;
 }
 
 /* 响应式调整 */
 @media (max-width: 768px) {
     .CodeMirror {
         font-size: 13px;
-        border-radius: 6px;
     }
 
     .CodeMirror-linenumber {
         font-size: 11px;
         min-width: 24px;
     }
-
-    .CodeMirror-gutters {
-        padding-right: 4px;
-    }
 }
 
-/* 深色模式支持 */
+/* 深色模式优化 */
 @media (prefers-color-scheme: dark) {
     .CodeMirror {
         background-color: #1e1e1e;
         border-color: #3e3e42;
-        color: #d4d4d4;
     }
 
     .CodeMirror-gutters {
@@ -659,54 +541,12 @@ li.CodeMirror-hint-active {
         background-color: #2a2d2e;
     }
 
-    .CodeMirror-activeline-background {
-        background: linear-gradient(
-            90deg,
-            rgba(0, 122, 204, 0.1) 0%,
-            rgba(0, 122, 204, 0.05) 100%
-        );
-    }
-
     .CodeMirror-cursor {
         border-left-color: #569cd6;
     }
 
     .CodeMirror-selected {
         background-color: rgba(86, 156, 214, 0.2);
-    }
-
-    /* 深色模式下的语法高亮 */
-    .cm-s-default .cm-keyword {
-        color: #569cd6;
-    }
-    .cm-s-default .cm-def {
-        color: #9cdcfe;
-    }
-    .cm-s-default .cm-variable {
-        color: #9cdcfe;
-    }
-    .cm-s-default .cm-string {
-        color: #ce9178;
-    }
-    .cm-s-default .cm-comment {
-        color: #6a9955;
-    }
-    .cm-s-default .cm-number {
-        color: #b5cea8;
-    }
-}
-
-/* 打印优化 */
-@media print {
-    .CodeMirror {
-        background: white !important;
-        border: 1px solid #ccc !important;
-        box-shadow: none !important;
-    }
-
-    .CodeMirror-gutters {
-        border-right: 1px solid #ccc !important;
-        background: #f0f0f0 !important;
     }
 }
 
