@@ -362,6 +362,11 @@ a + a {
     padding: 6px 40px;
 }
 
+.scripttable tbody a[href*="github.com"] img.icon16,
+.scripttable tbody a[href*="GitHub"] img.icon16 {
+    filter: invert(100%);
+}
+
 html.dark,
 html.dark body {
     background: #22282a;
