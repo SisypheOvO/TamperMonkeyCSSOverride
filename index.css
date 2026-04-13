@@ -7,6 +7,23 @@
     font-display: swap;
 }
 
+:root {
+    --text-white: #fff;
+    --purple-50: #e7ddff;
+    --purple-75: #e0c8ff;
+    --purple-100: #c2b8e0;
+    --purple-125: #8561f2;
+    --purple-150: #5629dd;
+    --purple-175: #5639ac;
+    --brown-50: #3d3946;
+    --brown-75: #302e38;
+    --gray-50: #9892aa;
+    --gray-100: #534972;
+    --gray-150: #2e3538;
+    --gray-175: #24222a;
+    --gray-200: #22282a;
+}
+
 *,
 :after,
 :before {
@@ -35,7 +52,7 @@ textarea {
     margin-top: 1rem;
     margin-bottom: 1rem;
     scrollbar-width: thin;
-    scrollbar-color: #8561f2 transparent;
+    scrollbar-color: var(--purple-125) transparent;
     max-width: 100%;
     min-height: 200px;
 }
@@ -51,7 +68,7 @@ textarea {
     align-self: stretch;
     background: none;
     filter: invert(0%) !important;
-    border: 2px solid #e7ddff;
+    border: 2px solid var(--purple-50);
     border-radius: 4px;
     flex: 1;
     font-weight: 400;
@@ -71,13 +88,13 @@ textarea {
 .dark input[type="text"]:not(.CodeMirror input),
 textarea,
 select[multiple] {
-    background-color: #e7ddff;
-    border: 2px solid #e0c8ff;
+    background-color: var(--purple-50);
+    border: 2px solid var(--purple-75);
 }
 
 .dark input[type="text"]:not(.CodeMirror input):focus,
 .dark select[multiple]:focus {
-    border-color: #c2b8e0;
+    border-color: var(--purple-100);
 }
 
 input {
@@ -87,8 +104,8 @@ input {
 
 input[type="button"],
 button:not(button.close) {
-    background-color: #5629dd;
-    color: #fff;
+    background-color: var(--purple-150);
+    color: var(--text-white);
     min-width: 128px;
     width: fit-content;
     overflow: hidden;
@@ -113,18 +130,17 @@ button:not(button.close) {
     filter: invert(0%) !important;
 
     &:hover {
-        background-color: hsl(255, 100%, 70%);
-        color: hsl(255, 40%, 100%);
+        background-color: var(--purple-125);
+        color: var(--text-white);
     }
 
     &:disabled {
-        background-color: #534972;
+        background-color: var(--gray-50);
         cursor: not-allowed;
-        opacity: 0.6;
 
         &:hover {
-            background-color: #534972;
-            color: #fff;
+            background-color: var(--gray-50);
+            color: var(--text-white);
         }
     }
 }
@@ -198,19 +214,18 @@ input[type="button"].button {
     border: none;
     padding: 0.4em 1em 1em 1em;
     margin: 0 0 0 0;
-    border-bottom: 1px solid #8c66ff !important;
+    border-bottom: 1px solid var(--purple-125) !important;
     transition: all 0.2s ease;
 }
 
 .dark .tv_tab {
-    color: #b3a6d9;
     background-color: transparent;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     border: none;
     padding: 0.4em 1em 1em 1em;
     margin: 0 0 0 0;
-    border-bottom: 1px solid #8c66ff !important;
+    border-bottom: 1px solid var(--purple-125) !important;
     transition: all 0.2s ease;
 }
 
@@ -229,7 +244,7 @@ input[type="button"].button {
 }
 
 .tv_tabs_align .tv_tab.tv_selected::before {
-    background-color: #8561f2;
+    background-color: var(--purple-125);
     bottom: -3px;
     left: 50%;
     content: "";
@@ -312,7 +327,7 @@ input[type="checkbox"] {
 
     &:checked {
         background-color: transparent;
-        border-color: #8c66ff;
+        border-color: var(--purple-125);
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238c66ff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: center;
@@ -677,7 +692,7 @@ a + a {
 
 html.dark,
 html.dark body {
-    background: #22282a;
+    background: var(--gray-200);
 }
 
 .dark {
@@ -689,46 +704,45 @@ html.dark body {
     }
 
     table {
-        color: #fff;
+        color: var(--text-white);
     }
 
     input,
     select,
     textarea {
-        background-color: #3d3946;
-        color: #fff;
+        background-color: var(--brown-50);
+        color: var(--text-white);
     }
 
     input[type="text"]:not(.CodeMirror input),
     textarea,
     select[multiple] {
-        background-color: #3d3946;
+        background-color: var(--brown-50);
         border: 2px solid transparent;
     }
 
     input[type="button"],
     button {
-        background-color: #5639ac;
+        background-color: var(--purple-175);
 
         &:disabled {
-            background-color: #534972;
+            background-color: var(--gray-100);
             cursor: not-allowed;
-            opacity: 0.6;
 
             &:hover {
-                background-color: #534972;
-                color: #fff;
+                background-color: var(--gray-100);
+                color: var(--text-white);
             }
         }
     }
 
     input[type="button"]:hover {
-        background-color: hsl(255, 100%, 70%);
-        color: hsl(255, 40%, 100%);
+        background-color: var(--purple-125);
+        color: var(--text-white);
     }
 
     :is(input, select, textarea):focus {
-        border-color: #c2b8e0;
+        border-color: var(--purple-100);
     }
 
     .head_container {
@@ -749,7 +763,7 @@ html.dark body {
 
     .tv_tab:hover {
         background-color: transparent;
-        color: #fff;
+        color: var(--text-white);
         border-color: transparent;
     }
 
@@ -760,7 +774,7 @@ html.dark body {
 
     .tv_selected {
         background-color: transparent !important;
-        color: #ffffff;
+        color: var(--text-white);
     }
 
     .tv_selected:before {
@@ -769,16 +783,16 @@ html.dark body {
     }
 
     .tv_content {
-        background-color: #22282a;
+        background-color: var(--gray-200);
     }
 
     .section_head {
-        background-color: #24222a;
-        color: #fff;
+        background-color: var(--gray-175);
+        color: var(--text-white);
     }
 
     .section_content {
-        background-color: #302e38;
+        background-color: var(--brown-75);
     }
 
     .settingstr {
@@ -792,14 +806,14 @@ html.dark body {
     .scripttable tr,
     .section,
     .actiontable {
-        background-color: #2e3538;
+        background-color: var(--gray-150);
     }
 
     .scripttable tr {
-        border-color: #22282a;
+        border-color: var(--gray-200);
     }
 
     table.scripttable.multiselect {
-        background-color: #22282a;
+        background-color: var(--gray-200);
     }
 }
