@@ -13,8 +13,8 @@
     box-sizing: border-box;
 }
 
-html,
-body,
+html.page_options,
+html.page_options body,
 .content_wrapper {
     height: 100%;
     overflow: hidden;
