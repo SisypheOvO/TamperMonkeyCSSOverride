@@ -2,9 +2,15 @@
 
 A TamperMonkey Custom CSS that allows you to beautify all the TamperMonkey interfaces.
 
-> **Note**: This override is designed to work only with "dark" theme.
+> **Note**: This override is designed to work only with "dark"/"light" theme.
 >
-> It may not work properly with light themes or "darker" theme currently.
+> It may not work properly with the "darker" theme currently.
+
+![Showcase](./showcase/Editor.png)
+
+![Showcase](./showcase/ScriptList.png)
+
+![Showcase](./showcase/Settings.png)
 
 ## Usage
 
