@@ -17,3 +17,9 @@ Open TamperMonkey settings and locate the script settings:
 ![Custom CSS Location](./showcase/customCSSLocation.png)
 
 Remember to save your changes. Click the save button in the bottom left corner of `Appearance`.
+
+## TODO
+
+- Encapsulate color variables to make it easier to customize the theme.
+- Add support for light themes and "darker" theme.
+- Nest the CSS rules to make it more organized and easier to maintain.

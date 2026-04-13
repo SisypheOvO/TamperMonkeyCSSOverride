@@ -51,7 +51,7 @@ textarea {
     align-self: stretch;
     background: none;
     filter: invert(0%) !important;
-    border: 2px solid transparent;
+    border: 2px solid #e7ddff;
     border-radius: 4px;
     flex: 1;
     font-weight: 400;
@@ -60,15 +60,23 @@ textarea {
     padding: 5px;
 }
 
-input[type="text"]:not(.CodeMirror input),
-textarea,
-select[multiple] {
-    background-color: #3d3946;
-    border: 2px solid transparent;
+.dark {
+    input,
+    select,
+    textarea {
+        border: 2px solid transparent;
+    }
 }
 
-input[type="text"]:not(.CodeMirror input):focus,
-select[multiple]:focus {
+.dark input[type="text"]:not(.CodeMirror input),
+textarea,
+select[multiple] {
+    background-color: #e7ddff;
+    border: 2px solid #e0c8ff;
+}
+
+.dark input[type="text"]:not(.CodeMirror input):focus,
+.dark select[multiple]:focus {
     border-color: #c2b8e0;
 }
 
@@ -77,9 +85,10 @@ input {
     margin-right: 0.4rem;
 }
 
-.dark input[type="button"],
-button {
-    background-color: #5639ac;
+input[type="button"],
+button:not(button.close) {
+    background-color: #5629dd;
+    color: #fff;
     min-width: 128px;
     width: fit-content;
     overflow: hidden;
@@ -99,22 +108,25 @@ button {
     transition: background-color 0.12s;
     vertical-align: middle;
     white-space: nowrap;
-}
-
-.dark button {
     margin-top: 1rem;
     margin-bottom: 1rem;
     filter: invert(0%) !important;
-    color: #fff;
-}
 
-.dark button:disabled {
-    background-color: #534972;
-}
+    &:hover {
+        background-color: hsl(255, 100%, 70%);
+        color: hsl(255, 40%, 100%);
+    }
 
-.dark input[type="button"]:hover {
-    background-color: hsl(255, 100%, 70%);
-    color: hsl(255, 40%, 100%);
+    &:disabled {
+        background-color: #534972;
+        cursor: not-allowed;
+        opacity: 0.6;
+
+        &:hover {
+            background-color: #534972;
+            color: #fff;
+        }
+    }
 }
 
 input[type="button"].button {
@@ -164,18 +176,30 @@ input[type="button"].button {
     white-space: nowrap;
     padding-left: 1px;
     position: relative;
+    height: 100%;
     max-height: 2.6em;
-    margin: 0 20px 2px 20px;
+    margin: 0 20px 0 20px;
 
     color: #b3a6d9;
-    background-color: #2e293d;
+    background-color: #045700;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    border: 1px solid #363636;
+    border: none;
 }
 
 .tv_container_fit {
     top: 2em;
+}
+
+.default .tv_tab {
+    background-color: #045700;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: none;
+    padding: 0.4em 1em 1em 1em;
+    margin: 0 0 0 0;
+    border-bottom: 1px solid #8c66ff !important;
+    transition: all 0.2s ease;
 }
 
 .dark .tv_tab {
@@ -244,6 +268,7 @@ input[type="button"].button {
     min-width: 250px;
     max-width: 250px;
     padding: 20px 80px 20px 50px;
+    background-color: #f4f6f9;
 }
 
 .section_content {
@@ -674,12 +699,48 @@ html.dark body {
         color: #fff;
     }
 
+    input[type="text"]:not(.CodeMirror input),
+    textarea,
+    select[multiple] {
+        background-color: #3d3946;
+        border: 2px solid transparent;
+    }
+
+    input[type="button"],
+    button {
+        background-color: #5639ac;
+
+        &:disabled {
+            background-color: #534972;
+            cursor: not-allowed;
+            opacity: 0.6;
+
+            &:hover {
+                background-color: #534972;
+                color: #fff;
+            }
+        }
+    }
+
+    input[type="button"]:hover {
+        background-color: hsl(255, 100%, 70%);
+        color: hsl(255, 40%, 100%);
+    }
+
     :is(input, select, textarea):focus {
         border-color: #c2b8e0;
     }
 
     .head_container {
         background-color: #221f2e;
+    }
+
+    .tv_tabs_align {
+        color: #b3a6d9;
+        background-color: #2e293d;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        border: 1px solid #363636;
     }
 
     .tr_tabs {
