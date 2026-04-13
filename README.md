@@ -2,6 +2,10 @@
 
 A TamperMonkey Custom CSS that allows you to beautify all the TamperMonkey interfaces.
 
+> **Note**: This override is designed to work only with "dark" theme.
+>
+> It may not work properly with light themes or "darker" theme currently.
+
 ## Usage
 
 Open TamperMonkey settings and locate the script settings:
